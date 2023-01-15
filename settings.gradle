@@ -1,0 +1,8 @@
+rootProject.name = "AppGithubUsers"
+include ':app'
+include ':remote'
+include ':domain'
+include ':data'
+include ':common'
+include ':presentation'
+include ':base'

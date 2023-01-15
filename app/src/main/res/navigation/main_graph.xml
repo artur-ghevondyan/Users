@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/usersFragment">
+
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.app.appgithubusers.ui.UsersFragment"
+        android:label="fragment_users"
+        tools:layout="@layout/fragment_users">
+        <action
+            android:id="@+id/action_usersFragment_to_userFragment"
+            app:destination="@id/userFragment"
+            app:popUpTo="@id/usersFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_usersFragment_to_userFragmentWithLessThreeRepo"
+            app:destination="@id/userFragmentWithLessThreeRepo" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="com.app.appgithubusers.ui.UserFragment"
+        android:label="fragment_user"
+        tools:layout="@layout/fragment_user">
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/userFragmentWithLessThreeRepo"
+        android:name="com.app.appgithubusers.ui.UserFragmentWithLessThreeRepo">
+        <argument
+            android:name="userName"
+            app:argType="string" />
+    </fragment>
+</navigation>
